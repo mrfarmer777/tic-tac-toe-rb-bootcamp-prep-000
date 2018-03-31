@@ -36,7 +36,8 @@ def turn(board)
 end
 
 def turn_count(board)
-  count = board.each do |pos|
+  count=0
+  turns = board.each do |pos|
     if(pos=="X"||pos=="O")
       count+=1
     end
