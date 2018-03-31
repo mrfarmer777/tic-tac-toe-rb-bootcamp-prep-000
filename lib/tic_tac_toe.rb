@@ -111,3 +111,14 @@ def winner(board)
     board[won?(board)[0]]
   end
 end
+
+def play(board)
+  until over?(board)
+    turn(board)
+  end
+  if won?(board)
+    puts "Congratulations, #{board[won[0]]} has won the game!"
+  elsif draw?(board)
+    puts "The game has been a draw"
+  end
+end
