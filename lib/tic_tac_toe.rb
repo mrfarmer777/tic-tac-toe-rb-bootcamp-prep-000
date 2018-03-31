@@ -4,6 +4,10 @@ def position_taken?(board, index)
   !(board[index].nil? || board[index] == " ")
 end
 
+
+def valid_move?(board,index)
+  valid = (index.between?(0,8)&&!position_taken(board,index))
+end
 # Define your WIN_COMBINATIONS constant
 WIN_COMBINATIONS = [
   [0,1,2],
