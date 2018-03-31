@@ -118,7 +118,7 @@ def play(board)
   end
   if (!won?(board).nil?)
     winner=board[won?(board)[0]]
-    puts "Congratulations, #{board[won?[0]]} has won the game!"
+    puts "Congratulations, #{winner} has won the game!"
   elsif draw?(board)
     puts "The game has been a draw"
   end
