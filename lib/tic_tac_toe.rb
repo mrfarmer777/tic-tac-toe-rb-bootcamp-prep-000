@@ -1,4 +1,4 @@
-
+#outputs the board for user viewing
 def display_board(board)
   puts " #{board[0]} | #{board[1]} | #{board[2]} "
   puts "-----------"
@@ -7,22 +7,28 @@ def display_board(board)
   puts " #{board[6]} | #{board[7]} | #{board[8]} "
 end
 
+#converts user input to an index by casting it as an Integer
+#and subtracting 1
 def input_to_index(user_input)
   user_input.to_i - 1
 end
 
+#defines the move by setting correct index to current player character
 def move(board, index, current_player)
   board[index] = current_player
 end
 
+#checks if the position is taken using the board and desired index, returns boolean
 def position_taken?(board, location)
   board[location] != " " && board[location] != ""
 end
 
+#checks correct index number and uses position_taken? helper function
 def valid_move?(board, index)
   index.between?(0,8) && !position_taken?(board, index)
 end
 
+#defines a full 'turn' function
 def turn(board)
   player=current_player(board)
   puts "Please enter 1-9:"
@@ -36,6 +42,7 @@ def turn(board)
   end
 end
 
+#counts turns by counting board spaces that are X or O
 def turn_count(board)
   count=0
   board.each do |pos|
@@ -46,6 +53,8 @@ def turn_count(board)
   count
 end
 
+#uses modulo of turn count to determine current player
+#returns player character
 def current_player(board)
   turns=turn_count(board)
   if(turns%2==0)
