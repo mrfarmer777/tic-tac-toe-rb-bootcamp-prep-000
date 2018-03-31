@@ -35,6 +35,13 @@ def turn(board)
   end
 end
 
+def turn_count(board)
+  count = board.each do |pos|
+    if(pos=="X"||pos=="O")
+      count+=1
+    end
+  end
+end
 
 # Define your WIN_COMBINATIONS constant
 WIN_COMBINATIONS = [
