@@ -44,6 +44,16 @@ def turn_count(board)
   end
 end
 
+def current_player(board)
+  turns=turn_count(board)
+  if(turns%2==0)
+    "X"
+  else
+    "O"
+  end
+end
+
+
 # Define your WIN_COMBINATIONS constant
 WIN_COMBINATIONS = [
   [0,1,2],
